@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shrunga Ladies PG</title>
+  <meta name="description" content="Shrunga Ladies PG in Rajajinagar, Bangalore - comfortable rooms, hygienic food, Wi-Fi, CCTV, hot water, and more." />
+  <style>
+    :root {
+      --bg: #fff8f6;
+      --card: #ffffff;
+      --text: #2b1f22;
+      --muted: #6f6064;
+      --brand: #b65c74;
+      --brand-dark: #8f3f58;
+      --accent: #f2d7df;
+      --border: #eddbe1;
+      --shadow: 0 12px 30px rgba(143, 63, 88, 0.10);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #fffaf8 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1150px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 248, 246, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(190, 120, 143, 0.15);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      color: var(--brand-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover { color: var(--brand-dark); }
+
+    .hero {
+      padding: 68px 0 38px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-card, .info-card, .section-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 34px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--brand-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      color: var(--brand-dark);
+    }
+
+    .lead {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 62ch;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: var(--brand);
+      color: white;
+      box-shadow: 0 10px 22px rgba(182, 92, 116, 0.22);
+    }
+    .btn-secondary {
+      background: white;
+      border-color: var(--border);
+      color: var(--brand-dark);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: 24px;
+    }
+
+    .stat {
+      background: linear-gradient(180deg, #fff 0%, #fff8fb 100%);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .stat b {
+      display: block;
+      font-size: 1.35rem;
+      color: var(--brand-dark);
+      margin-bottom: 4px;
+    }
+
+    .stat span { color: var(--muted); font-size: 0.95rem; }
+
+    section {
+      padding: 18px 0 10px;
+    }
+
+    .section-card {
+      padding: 28px;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 1.7rem;
+      color: var(--brand-dark);
+    }
+
+    .section-text {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .box h3 {
+      margin: 0 0 10px;
+      color: var(--brand-dark);
+      font-size: 1.08rem;
+    }
+
+    .box ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+    }
+
+    .box li { margin: 8px 0; }
+
+    .price-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .price-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fff6f9 100%);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--brand-dark);
+      margin: 0;
+    }
+
+    .small {
+      color: var(--muted);
+      margin: 6px 0 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--brand-dark);
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      padding: 34px 0 46px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .highlight {
+      color: var(--brand-dark);
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .grid-3, .price-list, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-card, .section-card { padding: 22px; }
+      .stats { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">Shrunga Ladies PG</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <span class="eyebrow">Safe • Comfortable • Affordable</span>
+          <h1>Shrunga Ladies PG</h1>
+          <p class="lead">
+            A well-maintained ladies PG in Rajajinagar, Bangalore, offering spacious rooms,
+            hygienic food, security, and all essential amenities for a peaceful stay.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:6366819390">Call Now</a>
+            <a class="btn btn-secondary" href="https://wa.me/918152856571" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn btn-secondary" href="#contact">View Contact</a>
+          </div>
+        </div>
+
+        <div class="info-card stats">
+          <div class="stat">
+            <b>15 Rooms</b>
+            <span>Across 3 floors</span>
+          </div>
+          <div class="stat">
+            <b>₹6,500</b>
+            <span>Starting price</span>
+          </div>
+          <div class="stat">
+            <b>24/7 Hot Water</b>
+            <span>Heat pump support</span>
+          </div>
+          <div class="stat">
+            <b>Wi-Fi + CCTV</b>
+            <span>Safe and connected</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container section-card">
+        <h2 class="section-title">About Shrunga Ladies PG</h2>
+        <p class="section-text">
+          Shrunga Ladies PG is located in Rajajinagar, Bangalore and is designed to provide a homely,
+          secure, and comfortable environment for women. The property offers well-arranged rooms,
+          hygienic food, modern facilities, and a convenient location.
+        </p>
+      </div>
+    </section>
+
+    <section id="rooms">
+      <div class="container section-card">
+        <h2 class="section-title">Room Details</h2>
+        <p class="section-text">Here is the floor-wise room configuration for the website.</p>
+
+        <div class="grid-3">
+          <div class="box">
+            <h3>Ground Floor</h3>
+            <ul>
+              <li>1 room – 6 sharing, attached washroom</li>
+              <li>1 room – 4 sharing, attached washroom</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>First Floor</h3>
+            <ul>
+              <li>2 rooms – 4 sharing, attached washroom</li>
+              <li>2 rooms – 8 sharing, attached washroom</li>
+              <li>1 room – 10 sharing, attached washroom</li>
+              <li>1 room – 5 sharing, common washroom</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Second Floor</h3>
+            <ul>
+              <li>7 rooms in total</li>
+              <li>Same type of room structure as first floor</li>
+              <li>2 rooms – 10 sharing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="facilities">
+      <div class="container section-card">
+        <h2 class="section-title">Facilities & Amenities</h2>
+        <p class="section-text">Everything residents need for a convenient and secure stay.</p>
+
+        <div class="grid-3">
+          <div class="box">
+            <h3>Comfort</h3>
+            <ul>
+              <li>Kurlon beds</li>
+              <li>Air-conditioned accommodation</li>
+              <li>TV</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Food & Water</h3>
+            <ul>
+              <li>3 times hygienic food</li>
+              <li>RO drinking water</li>
+              <li>Fridge in kitchen</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Safety & Utility</h3>
+            <ul>
+              <li>Lockers</li>
+              <li>CCTV security</li>
+              <li>Wi-Fi</li>
+              <li>24/7 hot water</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top:18px;">
+          <div class="box">
+            <h3>Terrace</h3>
+            <ul>
+              <li>Open terrace space</li>
+              <li>2 washing machines</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Location</h3>
+            <ul>
+              <li>Rajajinagar, Bangalore</li>
+              <li>Easy access location</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Ideal For</h3>
+            <ul>
+              <li>Students</li>
+              <li>Working women</li>
+              <li>Long-term stay</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container section-card">
+        <h2 class="section-title">Pricing</h2>
+        <p class="section-text">Simple pricing details for the website.</p>
+
+        <div class="price-list">
+          <div class="price-card">
+            <p class="price">₹6,500</p>
+            <p class="small">For most room categories</p>
+          </div>
+          <div class="price-card">
+            <p class="price">₹7,000</p>
+            <p class="small">For 4 sharing rooms</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container section-card">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-text">Get in touch for room availability and bookings.</p>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <strong>Address</strong>
+            #739/3, 59th Cross, 3rd Main Road, 4th Road, Rajajinagar, Bangalore - 560010
+          </div>
+          <div class="contact-item">
+            <strong>Phone</strong>
+            <a href="tel:6366819390">6366819390</a>
+          </div>
+          <div class="contact-item">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/918152856571" target="_blank" rel="noopener noreferrer">8152856571</a>
+          </div>
+          <div class="contact-item">
+            <strong>Email</strong>
+            <a href="mailto:shrungaladiespg@gmail.com">shrungaladiespg@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <strong>Instagram</strong>
+            <a href="https://instagram.com/shrunga_ladies_pg" target="_blank" rel="noopener noreferrer">@shrunga_ladies_pg</a>
+          </div>
+          <div class="contact-item">
+            <strong>Note</strong>
+            <span class="highlight">Advanced payment already received.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    © <span id="year"></span> Shrunga Ladies PG. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
