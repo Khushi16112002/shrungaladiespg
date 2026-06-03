@@ -3,362 +3,754 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shrunga Ladies PG | Rajajinagar, Bangalore</title>
-  <meta name="description" content="Shrunga Ladies PG in Rajajinagar, Bangalore. Safe, comfortable and affordable accommodation for women with hygienic food, spacious rooms, CCTV, Wi-Fi and modern amenities." />
+  <title>Shrunga Ladies PG | Premium Ladies PG in Rajajinagar</title>
+  <meta name="description" content="Shrunga Ladies PG in Rajajinagar, Bangalore. Premium ladies PG with hygienic food, safe rooms, Wi-Fi, CCTV, hot water, lockers, and modern amenities." />
   <style>
     :root{
-      --bg:#f7f5f2;
-      --bg2:#fff8f3;
-      --card:rgba(255,255,255,.82);
-      --text:#1f1a17;
-      --muted:#6f655f;
-      --brand:#d97706;
-      --brand2:#9a3412;
-      --brand3:#7c2d12;
-      --line:rgba(31,26,23,.09);
-      --shadow:0 20px 60px rgba(62,38,20,.10);
-      --shadow2:0 14px 34px rgba(62,38,20,.08);
-      --radius:24px;
-      --radius2:34px;
-      --container:min(1180px, calc(100% - 32px));
+      --bg: #fffdfd;
+      --paper: #ffffff;
+      --ink: #463c45;
+      --muted: #7f7480;
+      --line: rgba(70,60,69,.10);
+      --shadow: 0 18px 50px rgba(122, 86, 112, .10);
+      --shadow-soft: 0 8px 24px rgba(122, 86, 112, .08);
+
+      --teal: #72d7de;
+      --teal-deep: #3bb7c2;
+      --pink: #f7a3b7;
+      --pink-deep: #ea7898;
+      --mauve: #b78d9b;
+      --mauve-deep: #9f7485;
+      --cream: #fff8f6;
+      --soft: #fdf2f5;
+      --radius: 24px;
+      --radius-lg: 34px;
+      --container: min(1200px, calc(100% - 32px));
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(114,215,222,.28), transparent 22%),
+        radial-gradient(circle at top right, rgba(247,163,183,.22), transparent 20%),
+        linear-gradient(180deg, #fff 0%, #fff8fb 100%);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display:block; }
+
+    .container { width: var(--container); margin: 0 auto; }
+
+    .topbar {
+      background: linear-gradient(90deg, var(--teal) 0%, #87e4e4 42%, var(--pink) 100%);
+      color: #fff;
+      font-size: .92rem;
+    }
+    .topbar-inner {
+      display:flex; justify-content:space-between; gap:16px; align-items:center;
+      padding: 9px 0;
+      flex-wrap: wrap;
+    }
+    .topbar strong { font-weight: 700; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(255,255,255,.82);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      display:flex; align-items:center; justify-content:space-between; gap:18px;
+      padding: 16px 0;
+    }
+    .brand {
+      display:flex; align-items:center; gap:14px; min-width: fit-content;
+    }
+    .brand-mark {
+      width: 54px; height:54px; border-radius: 18px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, var(--teal), var(--pink));
+      color:#fff; font-weight: 800; letter-spacing:.6px;
+      box-shadow: 0 14px 30px rgba(114,215,222,.22);
+    }
+    .brand-text strong {
+      display:block;
+      font-size: 1.05rem;
+      letter-spacing: .2px;
+      line-height: 1.1;
+    }
+    .brand-text span { display:block; color: var(--muted); font-size: .9rem; margin-top: 3px; }
+
+    .nav {
+      display:flex; align-items:center; gap:22px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .nav a {
+      font-weight: 650;
+      color: #5d5460;
+      transition: .2s ease;
+    }
+    .nav a:hover { color: var(--pink-deep); }
+
+    .mobile-toggle {
+      display:none;
+      border: 1px solid var(--line);
+      background:#fff;
+      width: 46px; height: 46px;
+      border-radius: 14px;
+      box-shadow: var(--shadow-soft);
+      cursor:pointer;
+      font-size: 1.2rem;
+    }
+    .mobile-menu {
+      display:none;
+      padding: 8px 0 16px;
+      border-top: 1px solid var(--line);
+    }
+    .mobile-menu.open { display:block; }
+    .mobile-menu a {
+      display:block; padding: 12px 0;
+      font-weight: 700;
+      color: #5c535f;
+    }
+
+    .hero {
+      padding: 26px 0 12px;
+    }
+    .hero-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(120deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.76) 35%, rgba(255,255,255,.14) 100%),
+        radial-gradient(circle at 20% 20%, rgba(114,215,222,.22), transparent 18%),
+        radial-gradient(circle at 85% 20%, rgba(247,163,183,.18), transparent 17%),
+        linear-gradient(135deg, #fff 0%, #fdf2f6 100%);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.75);
+      min-height: 82vh;
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: stretch;
+    }
+    .hero-content {
+      padding: clamp(24px, 5vw, 64px);
+      display:grid;
+      align-content:center;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      display:inline-flex; align-items:center; gap:10px;
+      width: fit-content;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(114,215,222,.14);
+      color: #269aa5;
+      border: 1px solid rgba(114,215,222,.25);
+      font-weight: 800;
+      letter-spacing: .2px;
+      font-size: .9rem;
+    }
+    .hero h1 {
       margin:0;
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--text);
-      line-height:1.6;
+      font-size: clamp(2.6rem, 5.5vw, 5.4rem);
+      line-height: .96;
+      letter-spacing: -0.05em;
+      max-width: 11ch;
+    }
+    .hero h1 .teal {
+      color: var(--teal-deep);
+    }
+    .hero h1 .pink {
+      color: var(--pink-deep);
+    }
+    .hero p {
+      margin:0;
+      max-width: 58ch;
+      color: #675d69;
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+    .hero-pills {
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 2px;
+    }
+    .hero-pills span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      font-weight: 700;
+      color: #6a5d68;
+      font-size: .92rem;
+    }
+    .cta-row {
+      display:flex; flex-wrap:wrap; gap:12px;
+      margin-top: 4px;
+    }
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 16px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      cursor:pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal), var(--pink));
+      color:#fff;
+      box-shadow: 0 16px 30px rgba(114,215,222,.24);
+    }
+    .btn-secondary {
+      background: #fff;
+      color: var(--ink);
+      border-color: var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(255,255,255,.3);
+      color:#fff;
+    }
+
+    .hero-visual {
+      position: relative;
+      display:grid;
+      align-items:end;
+      padding: 24px;
+      min-height: 420px;
+    }
+    .glass-card {
+      border-radius: 30px;
+      overflow:hidden;
+      box-shadow: 0 22px 55px rgba(78, 52, 67, .14);
+      border: 1px solid rgba(255,255,255,.55);
       background:
-        radial-gradient(circle at top left, rgba(217,119,6,.10), transparent 24%),
-        radial-gradient(circle at top right, rgba(154,52,18,.08), transparent 22%),
-        linear-gradient(180deg, #fff 0%, var(--bg) 100%);
-      overflow-x:hidden;
+        linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.02)),
+        linear-gradient(135deg, rgba(114,215,222,.28), rgba(247,163,183,.22));
+      min-height: 100%;
+      position: relative;
     }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{width:var(--container);margin:0 auto}
-    .topbar{
-      position:sticky;top:0;z-index:100;
-      backdrop-filter:blur(18px);
-      background:rgba(255,255,255,.80);
-      border-bottom:1px solid var(--line);
-    }
-    .topbar-inner{
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      padding:14px 0;
-    }
-    .brand{display:flex;align-items:center;gap:12px;min-width:fit-content}
-    .brand-mark{
-      width:50px;height:50px;border-radius:16px;
-      display:grid;place-items:center;
-      color:#fff;font-weight:900;letter-spacing:.4px;
-      background:linear-gradient(135deg, var(--brand), #f59e0b 55%, var(--brand2));
-      box-shadow:0 14px 28px rgba(217,119,6,.24);
-    }
-    .brand-text strong{display:block;font-size:1.02rem;line-height:1.1}
-    .brand-text span{display:block;color:var(--muted);font-size:.88rem;margin-top:2px}
-    .nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}
-    .nav a{font-size:.95rem;font-weight:700;color:#4a403b}
-    .nav a:hover{color:var(--brand3)}
-    .nav-toggle{
-      display:none;border:1px solid var(--line);background:#fff;border-radius:14px;
-      width:46px;height:46px;cursor:pointer;align-items:center;justify-content:center;
-      box-shadow:var(--shadow2);
-    }
-    .hero{padding:24px 0 8px}
-    .hero-shell{
-      position:relative;overflow:hidden;border-radius:var(--radius2);
-      box-shadow:var(--shadow);
+    .hero-photo {
+      position:absolute; inset:0;
       background:
-        linear-gradient(135deg, rgba(27, 20, 15, .90), rgba(73, 34, 16, .72)),
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.12), transparent 28%),
-        url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1800&q=80') center/cover;
-      min-height:78vh;
-      display:grid;align-items:end;
+        linear-gradient(90deg, rgba(255,255,255,.80) 0%, rgba(255,255,255,.22) 34%, rgba(255,255,255,.05) 100%),
+        url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80') center/cover;
+      filter: saturate(1.05);
     }
-    .hero-content{
-      position:relative;z-index:1;
-      padding:clamp(24px, 5vw, 66px);
-      color:#fff;display:grid;gap:18px;max-width:820px;
+    .hero-overlay {
+      position:relative;
+      z-index:1;
+      height:100%;
+      display:grid;
+      align-content:end;
+      padding: 24px;
     }
-    .eyebrow{
-      display:inline-flex;width:fit-content;align-items:center;gap:10px;
-      padding:10px 16px;border-radius:999px;
-      background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14);
-      backdrop-filter:blur(10px);font-size:.92rem;font-weight:800;
+    .hero-stats {
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 14px;
+      transform: translateY(18px);
     }
-    .hero h1{
-      margin:0;font-size:clamp(2.5rem, 6vw, 5.6rem);line-height:.96;letter-spacing:-.045em;
-      max-width:11ch;
+    .stat {
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 20px;
+      padding: 14px 12px;
+      box-shadow: var(--shadow-soft);
+      text-align:center;
     }
-    .hero h1 span{
-      background:linear-gradient(135deg, #ffe8c5, #ffcf91);
-      -webkit-background-clip:text;background-clip:text;color:transparent;
+    .stat strong { display:block; font-size: 1.02rem; }
+    .stat span { display:block; font-size:.85rem; color: var(--muted); margin-top: 2px; }
+
+    .section { padding: 28px 0; }
+    .section-head {
+      display:flex; align-items:end; justify-content:space-between; gap: 18px;
+      flex-wrap:wrap;
+      margin-bottom: 16px;
     }
-    .hero p{
-      margin:0;max-width:68ch;font-size:1.04rem;color:rgba(255,255,255,.86)
+    .kicker {
+      display:inline-flex;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(114,215,222,.12);
+      color: #2597a2;
+      border: 1px solid rgba(114,215,222,.22);
+      font-weight: 800;
+      font-size: .88rem;
+      letter-spacing: .3px;
     }
-    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      min-height:48px;padding:0 18px;border-radius:16px;font-weight:800;
-      border:1px solid transparent;transition:.2s ease;cursor:pointer;white-space:nowrap
+    .section-title {
+      margin: 12px 0 0;
+      font-size: clamp(1.45rem, 3vw, 2.3rem);
+      letter-spacing: -0.03em;
     }
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{
-      background:linear-gradient(135deg, #f59e0b, var(--brand), var(--brand2));
-      color:#fff;box-shadow:0 16px 30px rgba(217,119,6,.25);
+    .section-subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 78ch;
+      line-height: 1.7;
     }
-    .btn-secondary{
-      background:rgba(255,255,255,.10);color:#fff;border-color:rgba(255,255,255,.16);
-      backdrop-filter:blur(8px)
+
+    .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .grid-3 { display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .grid-4 { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+
+    .card {
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      overflow:hidden;
     }
-    .hero-badges{
-      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px
-    }
-    .badge-card{
-      padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px)
-    }
-    .badge-card strong{display:block;font-size:1.02rem;margin-bottom:2px}
-    .badge-card span{color:rgba(255,255,255,.76);font-size:.92rem}
-    .section{padding:26px 0}
-    .section-head{
-      display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:16px;flex-wrap:wrap
-    }
-    .section-title{
-      margin:0;font-size:clamp(1.5rem, 3vw, 2.25rem);letter-spacing:-.03em
-    }
-    .section-subtitle{margin:6px 0 0;color:var(--muted);max-width:74ch}
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;
-      background:rgba(217,119,6,.08);color:var(--brand3);border:1px solid rgba(217,119,6,.12);
-      font-weight:800;font-size:.92rem
-    }
-    .grid-2{display:grid;grid-template-columns:1.06fr .94fr;gap:18px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-    .card{
-      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-      box-shadow:var(--shadow2);overflow:hidden
-    }
-    .card-pad{padding:24px}
-    .about-box{position:relative;overflow:hidden}
-    .about-box::before{
-      content:"";position:absolute;inset:0 auto auto 0;width:200px;height:200px;
-      background:radial-gradient(circle, rgba(217,119,6,.12), transparent 70%);pointer-events:none
-    }
-    .quick-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-    .stat{
-      background:linear-gradient(180deg, #fff 0%, #fff8f0 100%);
-      border:1px solid var(--line);border-radius:20px;padding:18px;display:flex;gap:14px;align-items:flex-start
-    }
-    .stat-icon{
-      width:46px;height:46px;border-radius:16px;display:grid;place-items:center;
-      background:linear-gradient(135deg, rgba(217,119,6,.12), rgba(154,52,18,.10));
-      flex:0 0 auto;font-size:1.2rem
-    }
-    .stat strong{display:block;font-size:1.06rem;margin-bottom:2px}
-    .stat span{color:var(--muted);font-size:.95rem}
-    .feature-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
-    .feature{
-      display:flex;gap:12px;padding:16px;border-radius:18px;background:#fff;border:1px solid var(--line)
-    }
-    .feature .icon{
-      width:40px;height:40px;border-radius:14px;display:grid;place-items:center;
-      background:rgba(217,119,6,.08);color:var(--brand3);font-size:1.05rem;flex:0 0 auto
-    }
-    .feature strong{display:block;margin-bottom:2px}
-    .feature p{margin:0;color:var(--muted);font-size:.95rem}
-    .room-card{position:relative;overflow:hidden}
-    .room-photo{
-      height:210px;
+    .card-pad { padding: 22px; }
+
+    .about {
+      position: relative;
       background:
-        linear-gradient(135deg, rgba(0,0,0,.16), rgba(0,0,0,.02)),
-        url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80') center/cover
+        radial-gradient(circle at top left, rgba(114,215,222,.12), transparent 28%),
+        linear-gradient(180deg, #fff, #fff8fb);
     }
-    .room-photo.room-2{background-image:linear-gradient(135deg, rgba(0,0,0,.16), rgba(0,0,0,.02)), url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80')}
-    .room-photo.room-3{background-image:linear-gradient(135deg, rgba(0,0,0,.16), rgba(0,0,0,.02)), url('https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80')}
-    .room-photo.room-4{background-image:linear-gradient(135deg, rgba(0,0,0,.16), rgba(0,0,0,.02)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=70')}
-    .room-tag{
-      position:absolute;top:16px;left:16px;
-      background:rgba(255,255,255,.92);color:var(--brand3);
-      padding:8px 12px;border-radius:999px;font-weight:900;font-size:.86rem;
-      box-shadow:0 10px 20px rgba(0,0,0,.10)
+    .about p { color: #685e69; line-height: 1.75; }
+
+    .mini-features {
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 16px;
     }
-    .room-body{padding:20px}
-    .room-body h3{margin:0 0 8px;font-size:1.1rem}
-    .meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 16px}
-    .meta span{
-      padding:7px 10px;border-radius:999px;background:rgba(217,119,6,.08);
-      color:var(--brand3);font-size:.84rem;font-weight:800
+    .mini {
+      display:flex; gap: 12px;
+      padding: 16px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
     }
-    .room-body ul{margin:0;padding-left:18px;color:#3a312c}
-    .room-body li{margin:7px 0}
-    .floor-grid{
-      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px
+    .mini .icon {
+      width: 42px; height:42px; border-radius: 14px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(114,215,222,.18), rgba(247,163,183,.18));
+      font-size: 1.1rem;
+      flex: 0 0 auto;
     }
-    .floor-card{
-      padding:24px;background:linear-gradient(180deg, #fff 0%, #fff8ef 100%);
-      border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow2)
+    .mini strong { display:block; margin-bottom: 2px; }
+    .mini span { color: var(--muted); font-size: .94rem; }
+
+    .room-card {
+      position: relative;
+      display:grid;
+      grid-template-rows: auto 1fr;
+      min-height: 100%;
     }
-    .floor-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:14px}
-    .floor-top h3{margin:0;font-size:1.15rem}
-    .floor-top span{
-      padding:8px 12px;border-radius:999px;background:rgba(217,119,6,.10);color:var(--brand3);
-      font-weight:800;font-size:.84rem;white-space:nowrap
+    .room-top {
+      padding: 18px 18px 14px;
+      background: linear-gradient(135deg, var(--teal), var(--pink));
+      color:#fff;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 10px;
     }
-    .room-list{display:grid;gap:10px}
-    .room-item{
-      padding:14px 15px;border-radius:16px;background:#fff;border:1px solid var(--line);
-      display:flex;justify-content:space-between;gap:12px;align-items:center
+    .room-top h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: .2px;
     }
-    .room-item strong{font-size:.98rem}
-    .room-item span{color:var(--muted);font-size:.92rem;text-align:right}
-    .price-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .price-card{
-      padding:24px;background:linear-gradient(180deg,#fff 0%,#fff8ef 100%);
-      border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow2)
+    .floor-tag {
+      display:inline-flex;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.18);
+      font-size: .84rem;
+      font-weight: 800;
+      white-space: nowrap;
     }
-    .price-card .label{color:var(--muted);font-weight:800;margin-bottom:8px}
-    .price-card .value{
-      font-size:2rem;font-weight:950;letter-spacing:-.03em;color:var(--brand3);margin:0 0 6px
+    .room-body {
+      padding: 18px;
+      background: #fff;
     }
-    .price-card .desc{margin:0;color:var(--muted)}
-    .gallery{
-      display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:18px
+    .room-list {
+      display:grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style:none;
     }
-    .gallery .card{min-height:280px;position:relative;overflow:hidden;border-radius:26px}
-    .gallery-main{
+    .room-list li {
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap: 12px;
+      padding: 12px 12px;
+      background: #fffafc;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    .room-list .left strong { display:block; font-size: .98rem; margin-bottom: 2px; }
+    .room-list .left span { color: var(--muted); font-size: .88rem; }
+    .room-list .right { display:flex; align-items:center; gap: 8px; }
+    .room-list .price {
+      font-weight: 900;
+      color: var(--mauve-deep);
+      white-space: nowrap;
+    }
+    .room-actions {
+      display:flex; gap: 10px; flex-wrap:wrap; margin-top: 14px;
+    }
+    .btn-book {
+      background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+      color:#fff;
+      padding: 0 16px;
+      min-height: 44px;
+      border-radius: 14px;
+      box-shadow: 0 14px 24px rgba(247,163,183,.25);
+      border: none;
+    }
+    .btn-book.secondary {
+      background: #fff;
+      color: var(--pink-deep);
+      border: 1px solid rgba(247,163,183,.35);
+      box-shadow: none;
+    }
+
+    .feature-grid {
+      display:grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap: 14px;
+    }
+    .feature-box {
+      padding: 18px 14px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fff, #fff7fb);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      text-align:center;
+      min-height: 132px;
+      display:grid;
+      place-items:center;
+      gap: 8px;
+    }
+    .feature-box .icon {
+      width: 46px; height:46px;
+      display:grid; place-items:center;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, rgba(114,215,222,.18), rgba(247,163,183,.18));
+    }
+    .feature-box strong { font-size: .98rem; }
+    .feature-box span { color: var(--muted); font-size: .88rem; line-height: 1.4; }
+
+    .pricing-grid {
+      display:grid;
+      grid-template-columns: 1fr 1.3fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .price-card {
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, #fff8fb);
+      box-shadow: var(--shadow-soft);
+    }
+    .price-card .label {
+      font-size:.9rem;
+      font-weight: 800;
+      letter-spacing: .35px;
+      color: var(--teal-deep);
+      text-transform: uppercase;
+    }
+    .price-card .value {
+      font-size: 2.2rem;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      margin: 10px 0 6px;
+      color: var(--mauve-deep);
+    }
+    .price-card p { margin:0; color: var(--muted); line-height: 1.65; }
+
+    .why-list {
+      list-style:none;
+      padding:0;
+      margin: 18px 0 0;
+      display:grid;
+      gap: 12px;
+    }
+    .why-list li {
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      color:#5f5560;
+      line-height:1.55;
+    }
+    .why-list li::before {
+      content:"✓";
+      width: 22px; height: 22px;
+      border-radius: 999px;
+      display:grid; place-items:center;
+      background: rgba(114,215,222,.16);
+      color: var(--teal-deep);
+      font-weight: 900;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
+    .form-wrap {
+      padding: 22px;
+      border-radius: 24px;
       background:
-        linear-gradient(135deg, rgba(15,15,15,.18), rgba(15,15,15,.04)),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,.16), transparent 30%),
-        url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80') center/cover
+        linear-gradient(180deg, #fff, #fff7fb);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
     }
-    .gallery-second{
+    .form-grid {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .field {
+      display:grid;
+      gap: 6px;
+    }
+    .field.full { grid-column: 1 / -1; }
+    label {
+      font-size: .88rem;
+      font-weight: 800;
+      color: #655a66;
+    }
+    input, select, textarea {
+      width:100%;
+      border: 1px solid rgba(70,60,69,.12);
+      background: #fff;
+      border-radius: 14px;
+      padding: 13px 14px;
+      font: inherit;
+      color: var(--ink);
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: rgba(114,215,222,.6);
+      box-shadow: 0 0 0 4px rgba(114,215,222,.12);
+    }
+    textarea { min-height: 110px; resize: vertical; }
+
+    .contact-links {
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .contact-mini {
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .contact-mini strong {
+      display:block; margin-bottom: 6px;
+    }
+    .contact-mini span, .contact-mini a {
+      color: var(--muted);
+      line-height: 1.6;
+      word-break: break-word;
+    }
+    .contact-mini a:hover { color: var(--pink-deep); }
+
+    .map {
+      overflow:hidden;
+      min-height: 360px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      background: #fff;
+    }
+    .map iframe {
+      width:100%;
+      height:100%;
+      min-height: 360px;
+      border: 0;
+    }
+
+    .gallery {
+      display:grid;
+      grid-template-columns: 1.3fr .7fr .7fr;
+      gap: 18px;
+    }
+    .gallery .tile {
+      min-height: 240px;
+      border-radius: 24px;
+      overflow:hidden;
+      position: relative;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--line);
+    }
+    .gallery .tile::before {
+      content:"";
+      position:absolute; inset:0;
       background:
-        linear-gradient(135deg, rgba(15,15,15,.18), rgba(15,15,15,.04)),
-        url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80') center/cover
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.05)),
+        radial-gradient(circle at 20% 20%, rgba(114,215,222,.18), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(247,163,183,.18), transparent 28%);
+      pointer-events:none;
+      z-index:1;
     }
-    .gallery-third{
-      background:
-        linear-gradient(135deg, rgba(15,15,15,.18), rgba(15,15,15,.04)),
-        url('https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80') center/cover
+    .gallery .tile.main { background:
+      linear-gradient(90deg, rgba(255,255,255,.76), rgba(255,255,255,.12)),
+      url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1500&q=80') center/cover;
     }
-    .gallery-caption{
-      position:absolute;left:18px;right:18px;bottom:18px;
-      padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.86);
-      backdrop-filter:blur(12px);box-shadow:0 10px 24px rgba(0,0,0,.12)
+    .gallery .tile.two { background:
+      linear-gradient(90deg, rgba(255,255,255,.72), rgba(255,255,255,.12)),
+      url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80') center/cover;
     }
-    .gallery-caption strong{display:block;margin-bottom:2px;color:var(--brand3)}
-    .gallery-caption span{color:var(--muted);font-size:.92rem}
-    .check-list{
-      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px
+    .gallery .tile.three { background:
+      linear-gradient(90deg, rgba(255,255,255,.72), rgba(255,255,255,.12)),
+      url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80') center/cover;
     }
-    .check{
-      display:flex;gap:12px;padding:16px;border-radius:18px;background:#fff;border:1px solid var(--line)
+    .gallery .caption {
+      position:absolute; left:16px; right:16px; bottom:16px;
+      z-index:2;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 18px;
+      padding: 14px;
+      backdrop-filter: blur(10px);
     }
-    .check .icon{
-      width:40px;height:40px;border-radius:14px;display:grid;place-items:center;
-      background:rgba(217,119,6,.08);color:var(--brand3);font-size:1.05rem;flex:0 0 auto
+    .gallery .caption strong { display:block; margin-bottom: 4px; }
+    .gallery .caption span { color: var(--muted); font-size: .92rem; }
+
+    .footer {
+      margin-top: 18px;
+      background: linear-gradient(135deg, #a88291, #8f6678);
+      color: rgba(255,255,255,.96);
+      padding: 34px 0 14px;
     }
-    .check strong{display:block;margin-bottom:2px}
-    .check p{margin:0;color:var(--muted);font-size:.95rem}
-    .why-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .why-card{
-      padding:22px;border-radius:22px;border:1px solid var(--line);
-      background:linear-gradient(180deg,#fff 0%,#fff9f2 100%);box-shadow:var(--shadow2)
+    .footer-grid {
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 18px;
     }
-    .why-card .mini{
-      width:44px;height:44px;border-radius:16px;display:grid;place-items:center;
-      background:rgba(217,119,6,.10);font-size:1.1rem;margin-bottom:12px
+    .footer p, .footer a { color: rgba(255,255,255,.88); line-height: 1.7; }
+    .footer h4 { margin: 0 0 10px; letter-spacing: .2px; }
+    .footer .bottom {
+      margin-top: 22px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,.18);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      color: rgba(255,255,255,.80);
+      font-size: .93rem;
     }
-    .why-card h3{margin:0 0 8px;font-size:1.04rem}
-    .why-card p{margin:0;color:var(--muted)}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .contact-card{
-      padding:22px;background:#fff;border:1px solid var(--line);border-radius:24px;
-      box-shadow:var(--shadow2)
+
+    .float {
+      position: fixed;
+      right: 16px;
+      z-index: 1200;
+      width: 58px; height:58px;
+      border-radius: 18px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      box-shadow: 0 18px 35px rgba(0,0,0,.18);
+      border: none;
+      cursor:pointer;
+      text-decoration:none;
     }
-    .contact-card h3{margin:0 0 10px;font-size:1.05rem}
-    .contact-card p{margin:0;color:var(--muted)}
-    .contact-link{
-      display:inline-flex;align-items:center;gap:8px;margin-top:10px;
-      color:var(--brand3);font-weight:900
+    .float.whatsapp { bottom: 18px; background: linear-gradient(135deg, #25D366, #1faa54); }
+    .float.call { bottom: 86px; background: linear-gradient(135deg, var(--pink), var(--pink-deep)); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
     }
-    .map-wrap{
-      overflow:hidden;border-radius:26px;border:1px solid var(--line);box-shadow:var(--shadow2);
-      min-height:360px;background:#fff
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
-    .map-wrap iframe{width:100%;height:100%;min-height:360px;border:0}
-    .footer{
-      padding:22px 0 96px;color:var(--muted);text-align:center
-    }
-    .footer .mini{margin-top:8px;font-size:.92rem}
-    .float-wa,.float-call{
-      position:fixed;right:18px;z-index:110;width:56px;height:56px;border-radius:18px;
-      display:grid;place-items:center;color:#fff;box-shadow:0 18px 30px rgba(0,0,0,.20)
-    }
-    .float-wa{bottom:18px;background:linear-gradient(135deg,#25d366,#1faa54)}
-    .float-call{bottom:86px;background:linear-gradient(135deg,#f59e0b,var(--brand))}
-    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-    .mobile-menu{display:none;padding:10px 0 18px;border-top:1px solid var(--line);margin-top:12px}
-    .mobile-menu a{display:block;padding:11px 0;font-weight:800;color:#433835}
-    @media (max-width: 1024px){
-      .grid-2,.grid-3,.grid-4,.price-grid,.gallery,.why-grid,.contact-grid,.hero-badges,.floor-grid{grid-template-columns:1fr 1fr}
-      .gallery-main{grid-column:span 2}
+
+    @media (max-width: 1100px){
+      .hero-shell { grid-template-columns: 1fr; min-height: auto; }
+      .hero-visual { min-height: 420px; }
+      .hero-stats { grid-template-columns: repeat(2, minmax(0,1fr)); transform: translateY(0); }
+      .grid-2, .grid-3, .pricing-grid, .footer-grid, .gallery, .feature-grid { grid-template-columns: 1fr 1fr; }
+      .feature-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
     }
     @media (max-width: 820px){
-      .nav{display:none}
-      .nav-toggle{display:inline-flex}
-      .mobile-menu.open{display:block}
-      .grid-2,.grid-3,.grid-4,.price-grid,.gallery,.why-grid,.contact-grid,.hero-badges,.floor-grid{grid-template-columns:1fr}
-      .hero-shell{min-height:auto}
-      .hero-content{padding:24px}
-      .hero h1{max-width:none}
-      .hero p{font-size:1rem}
-      .room-photo{height:190px}
-      .gallery-main{grid-column:auto}
-      .feature-list,.quick-stats,.check-list{grid-template-columns:1fr}
-      .map-wrap,.map-wrap iframe{min-height:300px}
-      .float-wa,.float-call{right:14px;width:52px;height:52px}
-      .float-wa{bottom:14px}
-      .float-call{bottom:76px}
+      .nav { display:none; }
+      .mobile-toggle { display:inline-grid; place-items:center; }
+      .grid-2, .grid-3, .pricing-grid, .footer-grid, .gallery, .feature-grid,
+      .mini-features, .contact-links, .form-grid, .hero-stats {
+        grid-template-columns: 1fr;
+      }
+      .feature-grid { grid-template-columns: 1fr 1fr; }
+      .hero h1 { max-width: none; }
+      .hero-content { padding: 22px; }
+      .gallery .tile { min-height: 220px; }
+      .map, .map iframe { min-height: 300px; }
+      .float { right: 12px; width: 54px; height: 54px; }
+      .float.whatsapp { bottom: 12px; }
+      .float.call { bottom: 78px; }
+    }
+    @media (max-width: 560px){
+      .feature-grid { grid-template-columns: 1fr; }
+      .brand-mark { width: 48px; height: 48px; border-radius: 16px; }
+      .topbar-inner { justify-content:center; text-align:center; }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div>📍 #739/3, 59th Cross, 3rd Main Road, 4th Road, Rajajinagar, Bangalore – 560010</div>
+      <div>📞 6366819390 &nbsp;•&nbsp; 💬 8152856571</div>
+    </div>
+  </div>
+
+  <header class="header">
     <div class="container">
-      <div class="topbar-inner">
+      <div class="header-inner">
         <a class="brand" href="#home" aria-label="Shrunga Ladies PG home">
           <div class="brand-mark">SL</div>
           <div class="brand-text">
             <strong>Shrunga Ladies PG</strong>
-            <span>Safe • Comfortable • Affordable</span>
+            <span>Safe • Comfortable • Homely</span>
           </div>
         </a>
 
         <nav class="nav" id="navLinks">
           <a href="#about">About</a>
           <a href="#rooms">Rooms</a>
-          <a href="#facilities">Facilities</a>
+          <a href="#facilities">Amenities</a>
           <a href="#pricing">Pricing</a>
-          <a href="#why">Why Us</a>
+          <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
         </nav>
 
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">☰</button>
       </div>
 
       <div class="mobile-menu" id="mobileMenu">
         <a href="#about">About</a>
         <a href="#rooms">Rooms</a>
-        <a href="#facilities">Facilities</a>
+        <a href="#facilities">Amenities</a>
         <a href="#pricing">Pricing</a>
-        <a href="#why">Why Us</a>
+        <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -369,35 +761,40 @@
       <div class="container">
         <div class="hero-shell reveal">
           <div class="hero-content">
-            <span class="eyebrow">✨ Ladies PG in Rajajinagar, Bangalore</span>
-            <h1>Premium living with a <span>homely feel</span></h1>
+            <div class="eyebrow">✨ Premium Ladies PG in Rajajinagar</div>
+            <h1>
+              Beautiful <span class="teal">living</span> with a
+              <span class="pink">premium pastel</span> look
+            </h1>
             <p>
-              Shrunga Ladies PG offers safe, comfortable, and affordable accommodation for women.
-              This layout highlights the real room structure, amenities, pricing, and contact details
-              in a clean, modern way.
+              A modern one-page website for Shrunga Ladies PG with a soft turquoise, pink, mauve, and white theme.
+              It highlights rooms, facilities, pricing, location, and enquiry options in a polished design.
             </p>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="tel:6366819390">📞 Call Now</a>
-              <a class="btn btn-secondary" href="https://wa.me/918152856571" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
-              <a class="btn btn-secondary" href="#contact">📍 Contact Details</a>
+
+            <div class="hero-pills">
+              <span>Safe & Secure</span>
+              <span>3 Times Hygienic Food</span>
+              <span>High-Speed Wi-Fi</span>
+              <span>24/7 Hot Water</span>
             </div>
 
-            <div class="hero-badges">
-              <div class="badge-card">
-                <strong>3 Times Food</strong>
-                <span>Fresh, hygienic meals daily</span>
-              </div>
-              <div class="badge-card">
-                <strong>CCTV Security</strong>
-                <span>Safer stay for residents</span>
-              </div>
-              <div class="badge-card">
-                <strong>Wi-Fi & TV</strong>
-                <span>Convenience for work and relaxation</span>
-              </div>
-              <div class="badge-card">
-                <strong>Hot Water</strong>
-                <span>24/7 heat pump support</span>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#rooms">Explore Rooms</a>
+              <a class="btn btn-secondary" href="#contact">Book a Visit</a>
+              <a class="btn btn-secondary" href="tel:6366819390">Call Now</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="glass-card">
+              <div class="hero-photo"></div>
+              <div class="hero-overlay">
+                <div class="hero-stats">
+                  <div class="stat"><strong>Safe</strong><span>24/7 Security</span></div>
+                  <div class="stat"><strong>Food</strong><span>Hygienic Meals</span></div>
+                  <div class="stat"><strong>Wi-Fi</strong><span>Fast Internet</span></div>
+                  <div class="stat"><strong>Hot Water</strong><span>Heat Pump</span></div>
+                </div>
               </div>
             </div>
           </div>
@@ -407,88 +804,66 @@
 
     <section class="section" id="about">
       <div class="container grid-2">
-        <div class="card card-pad about-box reveal">
-          <div class="section-head" style="margin-bottom:10px;">
-            <div>
-              <span class="pill">About Shrunga Ladies PG</span>
-              <h2 class="section-title" style="margin-top:12px;">Safe, comfortable, and affordable accommodation</h2>
-            </div>
-          </div>
-          <p class="section-subtitle" style="margin-bottom:18px;">
-            Shrunga Ladies PG is designed for students and working women who want a homely stay
-            with hygienic food, spacious rooms, security facilities, and modern amenities.
+        <div class="card card-pad about reveal">
+          <div class="kicker">About Shrunga Ladies PG</div>
+          <h2 class="section-title">Safe, comfortable, and affordable accommodation for women</h2>
+          <p>
+            Shrunga Ladies PG offers a homely environment for students and working women in Rajajinagar, Bangalore.
+            With hygienic food, spacious rooms, security facilities, and modern amenities, the property is presented
+            with a soft premium look that feels clean, warm, and trustworthy.
           </p>
 
-          <div class="quick-stats">
-            <div class="stat">
-              <div class="stat-icon">🏠</div>
-              <div>
-                <strong>Homely Living</strong>
-                <span>Comfortable environment for long stays</span>
-              </div>
+          <div class="mini-features">
+            <div class="mini">
+              <div class="icon">🏠</div>
+              <div><strong>Homely Stay</strong><span>Comfortable living with care</span></div>
             </div>
-            <div class="stat">
-              <div class="stat-icon">🔐</div>
-              <div>
-                <strong>Safe Stay</strong>
-                <span>Security-focused accommodation for women</span>
-              </div>
+            <div class="mini">
+              <div class="icon">🔐</div>
+              <div><strong>Security</strong><span>CCTV and lockers provided</span></div>
             </div>
-            <div class="stat">
-              <div class="stat-icon">🍽️</div>
-              <div>
-                <strong>Hygienic Food</strong>
-                <span>Fresh meals served daily</span>
-              </div>
+            <div class="mini">
+              <div class="icon">🍛</div>
+              <div><strong>Food</strong><span>3 times hygienic meals</span></div>
             </div>
-            <div class="stat">
-              <div class="stat-icon">🛏️</div>
-              <div>
-                <strong>Spacious Rooms</strong>
-                <span>Multiple sharing options available</span>
-              </div>
+            <div class="mini">
+              <div class="icon">🧺</div>
+              <div><strong>Utilities</strong><span>Washing machine & terrace</span></div>
             </div>
           </div>
         </div>
 
-        <aside class="card card-pad reveal">
-          <div class="section-head" style="margin-bottom:10px;">
-            <div>
-              <span class="pill">Quick Contact</span>
-              <h2 class="section-title" style="margin-top:12px;">Book your stay easily</h2>
+        <div class="card card-pad reveal">
+          <div class="kicker">Quick Highlights</div>
+          <h2 class="section-title">The essentials, presented beautifully</h2>
+          <div class="feature-grid" style="margin-top:16px;">
+            <div class="feature-box">
+              <div class="icon">🛏️</div>
+              <strong>Kurlon Mattresses</strong>
+              <span>Comfortable sleep every day</span>
+            </div>
+            <div class="feature-box">
+              <div class="icon">💧</div>
+              <strong>RO Drinking Water</strong>
+              <span>Safe drinking water</span>
+            </div>
+            <div class="feature-box">
+              <div class="icon">📺</div>
+              <strong>TV Facility</strong>
+              <span>Relaxation and entertainment</span>
+            </div>
+            <div class="feature-box">
+              <div class="icon">🌡️</div>
+              <strong>Hot Water</strong>
+              <span>24/7 through heat pump</span>
+            </div>
+            <div class="feature-box">
+              <div class="icon">❄️</div>
+              <strong>AC Accommodation</strong>
+              <span>Comfort in warm weather</span>
             </div>
           </div>
-          <div class="feature-list" style="margin-top:20px;">
-            <div class="feature">
-              <div class="icon">📍</div>
-              <div>
-                <strong>Rajajinagar</strong>
-                <p>Bangalore - 560010</p>
-              </div>
-            </div>
-            <div class="feature">
-              <div class="icon">📞</div>
-              <div>
-                <strong>Phone</strong>
-                <p>6366819390</p>
-              </div>
-            </div>
-            <div class="feature">
-              <div class="icon">💬</div>
-              <div>
-                <strong>WhatsApp</strong>
-                <p>8152856571</p>
-              </div>
-            </div>
-            <div class="feature">
-              <div class="icon">✉️</div>
-              <div>
-                <strong>Email</strong>
-                <p>shrungaladiespg@gmail.com</p>
-              </div>
-            </div>
-          </div>
-        </aside>
+        </div>
       </div>
     </section>
 
@@ -496,85 +871,86 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="pill">Room Details</span>
-            <h2 class="section-title">Clear floor-wise room structure</h2>
-            <p class="section-subtitle">This is the real room layout, shown in a premium and easy-to-read format.</p>
+            <div class="kicker">Rooms & Floor Details</div>
+            <h2 class="section-title">Every room has a Book Now option</h2>
+            <p class="section-subtitle">
+              Clicking Book Now scrolls directly to the contact form and fills the preferred room type automatically.
+            </p>
           </div>
         </div>
 
-        <div class="floor-grid">
-          <article class="floor-card reveal">
-            <div class="floor-top">
-              <h3>Ground Floor</h3>
-              <span>2 Rooms</span>
+        <div class="grid-3">
+          <article class="card room-card reveal">
+            <div class="room-top">
+              <div>
+                <h3>Ground Floor</h3>
+                <div style="opacity:.92; font-size:.92rem; margin-top:5px;">Attached washroom rooms</div>
+              </div>
+              <div class="floor-tag">2 Rooms</div>
             </div>
-            <div class="room-list">
-              <div class="room-item">
-                <strong>1 Room – 6 Sharing</strong>
-                <span>Attached Washroom</span>
-              </div>
-              <div class="room-item">
-                <strong>1 Room – 4 Sharing</strong>
-                <span>Attached Washroom</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="floor-card reveal">
-            <div class="floor-top">
-              <h3>First Floor</h3>
-              <span>6 Rooms</span>
-            </div>
-            <div class="room-list">
-              <div class="room-item">
-                <strong>2 Rooms – 4 Sharing</strong>
-                <span>Attached Washroom</span>
-              </div>
-              <div class="room-item">
-                <strong>2 Rooms – 8 Sharing</strong>
-                <span>Attached Washroom</span>
-              </div>
-              <div class="room-item">
-                <strong>1 Room – 10 Sharing</strong>
-                <span>Attached Washroom</span>
-              </div>
-              <div class="room-item">
-                <strong>1 Room – 5 Sharing</strong>
-                <span>Common Washroom</span>
+            <div class="room-body">
+              <ul class="room-list">
+                <li>
+                  <div class="left">
+                    <strong>6 Sharing Room</strong>
+                    <span>Attached washroom</span>
+                  </div>
+                  <div class="right">
+                    <span class="price">₹6,500</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="left">
+                    <strong>4 Sharing Room</strong>
+                    <span>Attached washroom</span>
+                  </div>
+                  <div class="right">
+                    <span class="price">₹7,000</span>
+                  </div>
+                </li>
+              </ul>
+              <div class="room-actions">
+                <a class="btn btn-book" href="#contact" data-room="Ground Floor - 6 Sharing Room">Book Now</a>
+                <a class="btn btn-book secondary" href="#contact" data-room="Ground Floor - 4 Sharing Room">Book Now</a>
               </div>
             </div>
           </article>
 
-          <article class="floor-card reveal">
-            <div class="floor-top">
-              <h3>Second Floor</h3>
-              <span>7 Rooms</span>
+          <article class="card room-card reveal">
+            <div class="room-top">
+              <div>
+                <h3>First Floor</h3>
+                <div style="opacity:.92; font-size:.92rem; margin-top:5px;">Mixed sharing options</div>
+              </div>
+              <div class="floor-tag">6 Rooms</div>
             </div>
-            <div class="room-list">
-              <div class="room-item">
-                <strong>7 Rooms in Total</strong>
-                <span>Similar room structure as first floor</span>
-              </div>
-              <div class="room-item">
-                <strong>2 Rooms – 10 Sharing</strong>
-                <span>Included on this floor</span>
-              </div>
+            <div class="room-body">
+              <ul class="room-list">
+                <li><div class="left"><strong>4 Sharing Room × 2</strong><span>Attached washroom</span></div><div class="right"><a class="btn btn-book" style="min-height:38px;padding:0 12px;font-size:.9rem;" href="#contact" data-room="First Floor - 4 Sharing Room">Book Now</a></div></li>
+                <li><div class="left"><strong>8 Sharing Room × 2</strong><span>Attached washroom</span></div><div class="right"><a class="btn btn-book" style="min-height:38px;padding:0 12px;font-size:.9rem;" href="#contact" data-room="First Floor - 8 Sharing Room">Book Now</a></div></li>
+                <li><div class="left"><strong>10 Sharing Room × 1</strong><span>Attached washroom</span></div><div class="right"><a class="btn btn-book" style="min-height:38px;padding:0 12px;font-size:.9rem;" href="#contact" data-room="First Floor - 10 Sharing Room">Book Now</a></div></li>
+                <li><div class="left"><strong>5 Sharing Room × 1</strong><span>Common washroom</span></div><div class="right"><a class="btn btn-book" style="min-height:38px;padding:0 12px;font-size:.9rem;" href="#contact" data-room="First Floor - 5 Sharing Room">Book Now</a></div></li>
+              </ul>
             </div>
           </article>
 
-          <article class="floor-card reveal">
-            <div class="floor-top">
-              <h3>Terrace</h3>
-              <span>Utility Space</span>
-            </div>
-            <div class="room-list">
-              <div class="room-item">
-                <strong>2 Washing Machines</strong>
-                <span>For resident use</span>
+          <article class="card room-card reveal">
+            <div class="room-top">
+              <div>
+                <h3>Second Floor</h3>
+                <div style="opacity:.92; font-size:.92rem; margin-top:5px;">Similar structure as first floor</div>
               </div>
-              <div class="room-item">
-                <strong>Open Terrace Space</strong>
-                <span>Extra open area</span>
+              <div class="floor-tag">7 Rooms</div>
+            </div>
+            <div class="room-body">
+              <ul class="room-list">
+                <li><div class="left"><strong>7 Rooms in Total</strong><span>Floor-wise shared rooms</span></div><div class="right"><span class="price">Available</span></div></li>
+                <li><div class="left"><strong>Includes 10 Sharing × 2</strong><span>Attached washroom</span></div><div class="right"><a class="btn btn-book" style="min-height:38px;padding:0 12px;font-size:.9rem;" href="#contact" data-room="Second Floor - 10 Sharing Room">Book Now</a></div></li>
+                <li><div class="left"><strong>Other room types</strong><span>Same as first floor structure</span></div><div class="right"><a class="btn btn-book" style="min-height:38px;padding:0 12px;font-size:.9rem;" href="#contact" data-room="Second Floor - Room Enquiry">Book Now</a></div></li>
+              </ul>
+              <div style="margin-top:12px; padding:14px; border-radius:18px; background:#fffafc; border:1px solid var(--line);">
+                <strong>Terrace</strong>
+                <div style="color:var(--muted); margin-top:4px;">2 Washing Machines • Open Terrace Space</div>
               </div>
             </div>
           </article>
@@ -586,25 +962,23 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="pill">Facilities & Amenities</span>
-            <h2 class="section-title">Everything residents need in one place</h2>
-            <p class="section-subtitle">Presented as premium cards instead of plain bullet points.</p>
+            <div class="kicker">Facilities & Amenities</div>
+            <h2 class="section-title">Soft pastel cards for a polished premium feel</h2>
+            <p class="section-subtitle">This section uses the turquoise, pink, mauve, and white combination you shared, but in a cleaner and more elegant layout.</p>
           </div>
         </div>
 
-        <div class="check-list">
-          <div class="check reveal"><div class="icon">🛏️</div><div><strong>Comfortable Beds</strong><p>With Kurlon mattresses for better rest.</p></div></div>
-          <div class="check reveal"><div class="icon">🍛</div><div><strong>3 Times Hygienic Food</strong><p>Breakfast, lunch, and dinner.</p></div></div>
-          <div class="check reveal"><div class="icon">💧</div><div><strong>RO Drinking Water</strong><p>Clean drinking water for daily use.</p></div></div>
-          <div class="check reveal"><div class="icon">🔒</div><div><strong>Individual Lockers</strong><p>Personal storage for safety and convenience.</p></div></div>
-          <div class="check reveal"><div class="icon">📹</div><div><strong>CCTV Security</strong><p>Added safety and peace of mind.</p></div></div>
-          <div class="check reveal"><div class="icon">📶</div><div><strong>High-Speed Wi-Fi</strong><p>Good internet for study and work.</p></div></div>
-          <div class="check reveal"><div class="icon">📺</div><div><strong>Television Facility</strong><p>Relaxation and entertainment in common space.</p></div></div>
-          <div class="check reveal"><div class="icon">♨️</div><div><strong>24/7 Hot Water</strong><p>Heat pump hot water support.</p></div></div>
-          <div class="check reveal"><div class="icon">❄️</div><div><strong>Air-Conditioned Accommodation</strong><p>Comfort option for residents.</p></div></div>
-          <div class="check reveal"><div class="icon">🍳</div><div><strong>Kitchen with 2 Refrigerators</strong><p>Support for food storage and kitchen use.</p></div></div>
-          <div class="check reveal"><div class="icon">🧺</div><div><strong>Washing Machines on Terrace</strong><p>Two machines available for residents.</p></div></div>
-          <div class="check reveal"><div class="icon">🤝</div><div><strong>Safe & Friendly Environment</strong><p>Supportive living for students and professionals.</p></div></div>
+        <div class="grid-4">
+          <div class="feature-box reveal"><div class="icon">🛏️</div><strong>Comfortable Beds</strong><span>Kurlon mattresses</span></div>
+          <div class="feature-box reveal"><div class="icon">🍛</div><strong>3 Times Food</strong><span>Hygienic and fresh meals</span></div>
+          <div class="feature-box reveal"><div class="icon">💧</div><strong>RO Water</strong><span>Clean drinking water</span></div>
+          <div class="feature-box reveal"><div class="icon">🔐</div><strong>Individual Lockers</strong><span>Personal storage safety</span></div>
+          <div class="feature-box reveal"><div class="icon">📹</div><strong>CCTV Security</strong><span>Added safety protection</span></div>
+          <div class="feature-box reveal"><div class="icon">📶</div><strong>Wi-Fi</strong><span>High-speed internet</span></div>
+          <div class="feature-box reveal"><div class="icon">🌡️</div><strong>Hot Water</strong><span>Heat pump supported</span></div>
+          <div class="feature-box reveal"><div class="icon">❄️</div><strong>Air Conditioned</strong><span>Comfortable accommodation</span></div>
+          <div class="feature-box reveal"><div class="icon">📺</div><strong>TV Facility</strong><span>Shared entertainment area</span></div>
+          <div class="feature-box reveal"><div class="icon">🧊</div><strong>2 Refrigerators</strong><span>Kitchen convenience</span></div>
         </div>
       </div>
     </section>
@@ -613,72 +987,31 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="pill">Pricing</span>
-            <h2 class="section-title">Simple and clear monthly rates</h2>
-            <p class="section-subtitle">Keep pricing visible so families and customers can decide quickly.</p>
+            <div class="kicker">Pricing</div>
+            <h2 class="section-title">Simple pricing cards with clear monthly rates</h2>
           </div>
         </div>
 
-        <div class="price-grid">
+        <div class="pricing-grid">
           <div class="price-card reveal">
             <div class="label">4 Sharing Rooms</div>
             <div class="value">₹7,000</div>
-            <p class="desc">Per month</p>
+            <p>Best for residents who want a balanced mix of space, comfort, and affordability.</p>
           </div>
+
+          <div class="price-card reveal">
+            <div class="label">Room Options</div>
+            <div class="value" style="font-size:1.9rem;">Book Now</div>
+            <p>Each room card includes a booking button that takes the visitor directly to the contact form below.</p>
+            <div class="room-actions">
+              <a class="btn btn-primary" href="#contact">Open Enquiry Form</a>
+            </div>
+          </div>
+
           <div class="price-card reveal">
             <div class="label">All Other Room Types</div>
             <div class="value">₹6,500</div>
-            <p class="desc">Per month</p>
-          </div>
-          <div class="price-card reveal">
-            <div class="label">Availability</div>
-            <div class="value">Call</div>
-            <p class="desc">To check current room availability and booking</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="why">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="pill">Why Choose Us?</span>
-            <h2 class="section-title">Strong reasons to book Shrunga Ladies PG</h2>
-            <p class="section-subtitle">This section helps the page feel more convincing and complete.</p>
-          </div>
-        </div>
-
-        <div class="why-grid">
-          <div class="why-card reveal">
-            <div class="mini">🔐</div>
-            <h3>Safe and secure accommodation</h3>
-            <p>Built for women who need a reliable and protected living space.</p>
-          </div>
-          <div class="why-card reveal">
-            <div class="mini">🍲</div>
-            <h3>Fresh home-style food</h3>
-            <p>Hygienic meals that feel comforting and suitable for daily life.</p>
-          </div>
-          <div class="why-card reveal">
-            <div class="mini">📍</div>
-            <h3>Excellent Rajajinagar location</h3>
-            <p>Convenient access for students and working professionals in Bangalore.</p>
-          </div>
-          <div class="why-card reveal">
-            <div class="mini">💸</div>
-            <h3>Affordable monthly pricing</h3>
-            <p>Good value for the room quality, amenities, and services provided.</p>
-          </div>
-          <div class="why-card reveal">
-            <div class="mini">♨️</div>
-            <h3>24/7 hot water and Wi-Fi</h3>
-            <p>Essential comfort features available throughout the stay.</p>
-          </div>
-          <div class="why-card reveal">
-            <div class="mini">📹</div>
-            <h3>CCTV surveillance</h3>
-            <p>Extra safety for residents and peace of mind for families.</p>
+            <p>Applicable to the remaining sharing room types unless otherwise discussed at the time of enquiry.</p>
           </div>
         </div>
       </div>
@@ -687,101 +1020,122 @@
     <section class="section">
       <div class="container grid-2">
         <div class="card card-pad reveal">
-          <div class="section-head" style="margin-bottom:10px;">
-            <div>
-              <span class="pill">Gallery Style</span>
-              <h2 class="section-title" style="margin-top:12px;">A premium visual section</h2>
-            </div>
-          </div>
-          <p class="section-subtitle">Use this part for property photos, interiors, food, and terrace images.</p>
-
-          <div class="gallery" style="margin-top:18px;">
-            <div class="card gallery-main">
-              <div class="gallery-caption">
-                <strong>Premium living space</strong>
-                <span>Hero-style highlight for the PG.</span>
-              </div>
-            </div>
-            <div class="card gallery-second">
-              <div class="gallery-caption">
-                <strong>Room interiors</strong>
-                <span>Show clean and spacious rooms.</span>
-              </div>
-            </div>
-            <div class="card gallery-third">
-              <div class="gallery-caption">
-                <strong>Comfort & facilities</strong>
-                <span>Highlight the homely environment.</span>
-              </div>
-            </div>
-          </div>
+          <div class="kicker">Why Choose Us</div>
+          <h2 class="section-title">Trust, comfort, and location in one place</h2>
+          <ul class="why-list">
+            <li>Safe and secure accommodation for women</li>
+            <li>Hygienic and fresh home-style food</li>
+            <li>Well-maintained rooms with modern amenities</li>
+            <li>Affordable pricing for students and working professionals</li>
+            <li>Excellent location in Rajajinagar</li>
+            <li>24/7 hot water and reliable Wi-Fi</li>
+            <li>CCTV surveillance for added safety</li>
+            <li>Comfortable living environment</li>
+          </ul>
         </div>
 
-        <div class="card card-pad reveal">
-          <div class="section-head" style="margin-bottom:10px;">
-            <div>
-              <span class="pill">Location</span>
-              <h2 class="section-title" style="margin-top:12px;">Find us easily on the map</h2>
+        <div class="card card-pad reveal" id="contact">
+          <div class="kicker">Enquiry Form</div>
+          <h2 class="section-title">Book Now goes straight here</h2>
+          <p class="section-subtitle">When a room button is clicked, the preferred room type is inserted automatically into this form.</p>
+
+          <form class="form-wrap" id="enquiryForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Your Name</label>
+                <input id="name" type="text" placeholder="Enter your name" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone Number</label>
+                <input id="phone" type="tel" placeholder="Enter phone number" required />
+              </div>
+              <div class="field">
+                <label for="movein">Move-in Date</label>
+                <input id="movein" type="date" />
+              </div>
+              <div class="field">
+                <label for="roomType">Preferred Room Type</label>
+                <input id="roomType" type="text" placeholder="Choose from room cards above" />
+              </div>
+              <div class="field full">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Tell us your preferred floor, sharing type, and any questions..."></textarea>
+              </div>
+              <div class="field full">
+                <button type="submit" class="btn btn-primary" style="width:100%;">Check Availability</button>
+              </div>
             </div>
-          </div>
-          <p class="section-subtitle">Add the location directly so customers can navigate without confusion.</p>
-          <div class="map-wrap" style="margin-top:18px;">
-            <iframe
-              src="https://www.google.com/maps?q=Rajajinagar,Bangalore&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Shrunga Ladies PG Location"
-            ></iframe>
+          </form>
+
+          <div class="contact-links">
+            <div class="contact-mini">
+              <strong>Address</strong>
+              <span>#739/3, 59th Cross, 3rd Main Road, 4th Road, Rajajinagar, Bangalore – 560010</span>
+            </div>
+            <div class="contact-mini">
+              <strong>Phone / WhatsApp</strong>
+              <a href="tel:6366819390">6366819390</a><br>
+              <a href="https://wa.me/918152856571" target="_blank" rel="noopener noreferrer">8152856571</a>
+            </div>
+            <div class="contact-mini">
+              <strong>Email</strong>
+              <a href="mailto:shrungaladiespg@gmail.com">shrungaladiespg@gmail.com</a>
+            </div>
+            <div class="contact-mini">
+              <strong>Instagram</strong>
+              <a href="https://instagram.com/shrunga_ladies_pg" target="_blank" rel="noopener noreferrer">@shrunga_ladies_pg</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section">
+      <div class="container grid-2">
+        <div class="card card-pad reveal">
+          <div class="kicker">Prime Location</div>
+          <h2 class="section-title">Rajajinagar convenience</h2>
+          <ul class="why-list">
+            <li>Rajajinagar Metro Station — about 5 min</li>
+            <li>Orion Mall — about 10 min</li>
+            <li>World Trade Center — about 12 min</li>
+            <li>Colleges, hospitals, and markets nearby</li>
+          </ul>
+        </div>
+
+        <div class="card card-pad reveal">
+          <div class="kicker">Find Us Here</div>
+          <h2 class="section-title">Google Map integration</h2>
+          <div class="map" style="margin-top:16px;">
+            <iframe
+              src="https://www.google.com/maps?q=Rajajinagar,Bangalore&output=embed"
+              loading="lazy"
+              title="Shrunga Ladies PG location"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
       <div class="container">
         <div class="section-head">
           <div>
-            <span class="pill">Contact</span>
-            <h2 class="section-title">Book your stay today</h2>
-            <p class="section-subtitle">Everything is placed clearly so people can reach out quickly.</p>
+            <div class="kicker">Gallery</div>
+            <h2 class="section-title">Photo placeholders for tomorrow</h2>
+            <p class="section-subtitle">You can replace these placeholder images with the real PG photos tomorrow without changing the layout.</p>
           </div>
         </div>
 
-        <div class="contact-grid">
-          <div class="contact-card reveal">
-            <h3>Address</h3>
-            <p>#739/3, 59th Cross, 3rd Main Road, 4th Road, Rajajinagar, Bangalore – 560010</p>
-            <a class="contact-link" href="https://www.google.com/maps?q=Rajajinagar,Bangalore" target="_blank" rel="noopener noreferrer">📍 Open in Maps</a>
+        <div class="gallery reveal">
+          <div class="tile main">
+            <div class="caption"><strong>Front view / hero image</strong><span>Use the best property photo here.</span></div>
           </div>
-
-          <div class="contact-card reveal">
-            <h3>Phone Number</h3>
-            <p>6366819390</p>
-            <a class="contact-link" href="tel:6366819390">📞 Call Now</a>
+          <div class="tile two">
+            <div class="caption"><strong>Room interiors</strong><span>Show the neat and spacious rooms.</span></div>
           </div>
-
-          <div class="contact-card reveal">
-            <h3>WhatsApp Number</h3>
-            <p>8152856571</p>
-            <a class="contact-link" href="https://wa.me/918152856571" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
-          </div>
-
-          <div class="contact-card reveal">
-            <h3>Email</h3>
-            <p><a href="mailto:shrungaladiespg@gmail.com">shrungaladiespg@gmail.com</a></p>
-            <a class="contact-link" href="mailto:shrungaladiespg@gmail.com">✉️ Send Email</a>
-          </div>
-
-          <div class="contact-card reveal">
-            <h3>Instagram</h3>
-            <p>@shrunga_ladies_pg</p>
-            <a class="contact-link" href="https://instagram.com/shrunga_ladies_pg" target="_blank" rel="noopener noreferrer">📷 Visit Instagram</a>
-          </div>
-
-          <div class="contact-card reveal">
-            <h3>Ready to book</h3>
-            <p>Contact us today to check room availability and book your stay at Shrunga Ladies PG.</p>
-            <a class="contact-link" href="#home">⬆ Back to top</a>
+          <div class="tile three">
+            <div class="caption"><strong>Amenities / lifestyle</strong><span>Food, washroom, terrace, or common area.</span></div>
           </div>
         </div>
       </div>
@@ -790,29 +1144,65 @@
 
   <footer class="footer">
     <div class="container">
-      <div>© <span id="year"></span> Shrunga Ladies PG. All rights reserved.</div>
-      <div class="mini">Premium live-space style one-page website</div>
+      <div class="footer-grid">
+        <div>
+          <h4>Shrunga Ladies PG</h4>
+          <p>Safe, comfortable, and affordable accommodation for women in Rajajinagar, Bangalore.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>#739/3, 59th Cross,<br>Rajajinagar, Bangalore</p>
+          <p>6366819390<br>8152856571</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <p><a href="#about">About</a><br><a href="#rooms">Rooms</a><br><a href="#facilities">Amenities</a><br><a href="#contact">Contact</a></p>
+        </div>
+        <div>
+          <h4>Hours</h4>
+          <p>Open 24/7<br>Feel free to contact us anytime.</p>
+        </div>
+      </div>
+      <div class="bottom">
+        <div>© <span id="year"></span> Shrunga Ladies PG. All rights reserved.</div>
+        <div>Designed in a soft pastel premium style.</div>
+      </div>
     </div>
   </footer>
 
-  <a class="float-wa" href="https://wa.me/918152856571" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp chat">💬</a>
-  <a class="float-call" href="tel:6366819390" aria-label="Call now">📞</a>
+  <a class="float whatsapp" href="https://wa.me/918152856571" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">💬</a>
+  <a class="float call" href="tel:6366819390" aria-label="Call now">📞</a>
 
   <script>
-    const year = document.getElementById('year');
-    year.textContent = new Date().getFullYear();
+    const yearEl = document.getElementById('year');
+    yearEl.textContent = new Date().getFullYear();
 
-    const navToggle = document.getElementById('navToggle');
+    const mobileToggle = document.getElementById('mobileToggle');
     const mobileMenu = document.getElementById('mobileMenu');
+    mobileToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
-    navToggle?.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
+    // Book Now -> contact form with room type filled
+    const roomType = document.getElementById('roomType');
+    document.querySelectorAll('[data-room]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const room = btn.getAttribute('data-room') || '';
+        roomType.value = room;
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => document.getElementById('name').focus(), 500);
+      });
     });
 
-    mobileMenu?.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    // Demo submit behavior (replace with backend / WhatsApp / email as needed)
+    document.getElementById('enquiryForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const room = document.getElementById('roomType').value.trim();
+      alert(`Thank you ${name || ''}! We received your enquiry for ${room || 'a room'} and will contact you at ${phone || 'the provided number'}.`);
     });
 
+    // Reveal animation
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -820,7 +1210,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.15 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
