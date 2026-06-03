@@ -641,7 +641,7 @@
       gap: 18px;
       grid-auto-flow: dense;
     }
-    .gallery{
+  .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   gap:20px;
@@ -651,6 +651,7 @@
   overflow:hidden;
   border-radius:20px;
   box-shadow:0 10px 25px rgba(0,0,0,.12);
+  background:#fff;
 }
 
 .gallery .tile img{
@@ -664,8 +665,6 @@
 .gallery .tile:hover img{
   transform:scale(1.05);
 }
-    .gallery .tile.wide { grid-column: span 2; }
-    .gallery .tile.three { grid-column: span 1; }
 
     @media (max-width: 1100px){
       .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1167,7 +1166,7 @@
           </div>
         </div>
 
-        <section class="section">
+ <section class="section" id="gallery">
   <div class="container">
     <div class="section-head">
       <div>
@@ -1182,50 +1181,48 @@
     <div class="gallery">
 
       <div class="tile">
-        <img src="Shrunga Ladies PG Building.jpg" alt="Shrunga Ladies PG Building">
+        <img src="Shrunga Ladies PG Building.jpg" alt="">
       </div>
 
       <div class="tile">
-        <img src="Shrunga Ladies PG Entrance.jpg" alt="Shrunga Ladies PG Entrance">
+        <img src="Shrunga Ladies PG Entrance.jpg" alt="">
       </div>
 
       <div class="tile">
-        <img src="Reception & Common Area.jpg" alt="Reception & Common Area">
+        <img src="Reception & Common Area.jpg" alt="">
       </div>
 
       <div class="tile">
-        <img src="Fully Furnished Ladies PG Room.jpg" alt="Fully Furnished Ladies PG Room">
+        <img src="Fully Furnished Ladies PG Room.jpg" alt="">
       </div>
 
       <div class="tile">
-        <img src="Spacious Sharing Room.jpg" alt="Spacious Sharing Room">
+        <img src="Spacious Sharing Room.jpg" alt="">
       </div>
 
       <div class="tile">
-        <img src="Comfortable Shared Accommodation.jpg" alt="Comfortable Shared Accommodation">
+        <img src="Comfortable Shared Accommodation.jpg" alt="">
       </div>
 
       <div class="tile">
-        <img src="Room with Entertainment Facility.jpg" alt="Room with Entertainment Facility">
+        <img src="Room with Entertainment Facility.jpg" alt="">
       </div>
 
       <div class="tile">
-        <img src="Personal Storage Facilities.jpg" alt="Personal Storage Facilities">
+        <img src="Personal Storage Facilities.jpg" alt="">
       </div>
 
       <div class="tile">
-        <img src="Safe & Clean PG Corridor.jpg" alt="Safe & Clean PG Corridor">
+        <img src="Safe & Clean PG Corridor.jpg" alt="">
       </div>
 
       <div class="tile">
-        <img src="Wash Area & Dressing Space.jpg" alt="Wash Area & Dressing Space">
+        <img src="Wash Area & Dressing Space.jpg" alt="">
       </div>
 
     </div>
   </div>
 </section>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
