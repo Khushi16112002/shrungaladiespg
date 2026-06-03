@@ -250,7 +250,7 @@
       position:absolute; inset:0;
       background:
         linear-gradient(90deg, rgba(255,255,255,.80) 0%, rgba(255,255,255,.22) 34%, rgba(255,255,255,.05) 100%),
-        url('Shrunga%20Ladies%20PG%20Building.jpg') center/cover;
+     url('./Shrunga Ladies PG Building.jpg') center/cover;
       filter: saturate(1.05);
     }
     .hero-overlay {
@@ -919,6 +919,200 @@
     }
 
 }
+    /* ===== NEW SECTIONS ===== */
+
+.hero-visual.real-photo .hero-photo{
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.82) 0%, rgba(255,255,255,.24) 34%, rgba(255,255,255,.08) 100%),
+    url('./Shrunga Ladies PG Building.jpg') center/cover;
+}
+
+.hero-visual.real-photo .glass-card{
+  min-height: 560px;
+}
+
+.hero-visual.real-photo .hero-stats{
+  grid-template-columns: repeat(4, minmax(0,1fr));
+}
+
+.room-photos-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:18px;
+  margin-top:18px;
+}
+
+.room-photo-card{
+  overflow:hidden;
+  border-radius:24px;
+  border:1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  background:#fff;
+}
+
+.room-photo-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  display:block;
+}
+
+.room-photo-card .caption{
+  padding:14px 16px;
+}
+
+.room-photo-card .caption strong{
+  display:block;
+  margin-bottom:4px;
+}
+
+.room-photo-card .caption span{
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+.reviews-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:18px;
+  margin-top:18px;
+}
+
+.review-card{
+  padding:22px;
+  border-radius:24px;
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, #fff, #fff7fb);
+  box-shadow: var(--shadow-soft);
+}
+
+.review-stars{
+  font-size:1.05rem;
+  color:#c88f2d;
+  letter-spacing:1px;
+  margin-bottom:10px;
+}
+
+.review-card p{
+  margin:0;
+  color:#685e69;
+  line-height:1.7;
+}
+
+.review-card .name{
+  margin-top:14px;
+  font-weight:800;
+}
+
+.review-card .meta{
+  color:var(--muted);
+  font-size:.9rem;
+  margin-top:4px;
+}
+
+.review-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.faq-list{
+  display:grid;
+  gap:12px;
+  margin-top:18px;
+}
+
+.faq-item{
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:#fff;
+  box-shadow: var(--shadow-soft);
+  overflow:hidden;
+}
+
+.faq-item summary{
+  cursor:pointer;
+  list-style:none;
+  padding:16px 18px;
+  font-weight:800;
+  color:#5f5560;
+}
+
+.faq-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.faq-item .answer{
+  padding:0 18px 16px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.float-check{
+  position:fixed;
+  left:16px;
+  bottom:18px;
+  z-index:1200;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 18px;
+  border-radius:18px;
+  background: linear-gradient(135deg, var(--teal-deep), var(--pink-deep));
+  color:#fff;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow: 0 18px 35px rgba(0,0,0,.18);
+}
+
+.business-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:44px;
+  padding:0 16px;
+  border-radius:14px;
+  border:1px solid rgba(114,215,222,.28);
+  background:#fff;
+  color:var(--pink-deep);
+  font-weight:800;
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 1100px){
+  .room-photos-grid,
+  .reviews-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px){
+  .room-photos-grid,
+  .reviews-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .room-photo-card img{
+    height:220px;
+  }
+
+  .float-check{
+    left:12px;
+    bottom:12px;
+    padding:12px 14px;
+    border-radius:16px;
+    font-size:.95rem;
+  }
+}
+
+@media (max-width: 480px){
+  .hero-visual.real-photo .glass-card{
+    min-height: 460px;
+  }
+}
   </style>
 </head>
 <body>
@@ -992,19 +1186,19 @@
             </div>
           </div>
 
-          <div class="hero-visual">
-            <div class="glass-card">
-              <div class="hero-photo"></div>
-              <div class="hero-overlay">
-                <div class="hero-stats">
-                  <div class="stat"><strong>Safe</strong><span>24/7 Security</span></div>
-                  <div class="stat"><strong>Food</strong><span>Hygienic Meals</span></div>
-                  <div class="stat"><strong>Wi-Fi</strong><span>Fast Internet</span></div>
-                  <div class="stat"><strong>Hot Water</strong><span>Heat Pump</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="hero-visual real-photo">
+  <div class="glass-card">
+    <div class="hero-photo"></div>
+    <div class="hero-overlay">
+      <div class="hero-stats">
+        <div class="stat"><strong>Safe</strong><span>24/7 Security</span></div>
+        <div class="stat"><strong>Food</strong><span>Hygienic Meals</span></div>
+        <div class="stat"><strong>Wi-Fi</strong><span>Fast Internet</span></div>
+        <div class="stat"><strong>Hot Water</strong><span>Heat Pump</span></div>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </section>
@@ -1183,7 +1377,45 @@
         </div>
       </div>
     </section>
+<section class="section" id="room-photos">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">Room Photos</div>
+        <h2 class="section-title">Real room images before pricing</h2>
+        <p class="section-subtitle">
+          Show the actual building, rooms, and common areas here so visitors see the property first.
+        </p>
+      </div>
+    </div>
 
+    <div class="room-photos-grid">
+      <div class="room-photo-card">
+        <img src="./Shrunga Ladies PG Building.jpg" alt="Shrunga Ladies PG Building">
+        <div class="caption">
+          <strong>PG Building</strong>
+          <span>Front view of the property</span>
+        </div>
+      </div>
+
+      <div class="room-photo-card">
+        <img src="./Fully Furnished Ladies PG Room.jpg" alt="Fully Furnished Ladies PG Room">
+        <div class="caption">
+          <strong>Furnished Room</strong>
+          <span>Comfortable sharing room</span>
+        </div>
+      </div>
+
+      <div class="room-photo-card">
+        <img src="./Reception & Common Area.jpg" alt="Reception and Common Area">
+        <div class="caption">
+          <strong>Common Area</strong>
+          <span>Reception and shared space</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     <section class="section" id="pricing">
       <div class="container">
         <div class="section-head">
@@ -1234,6 +1466,8 @@
             <li>Comfortable living environment</li>
           </ul>
         </div>
+
+        
 
         <div class="card card-pad reveal" id="contact">
           <div class="kicker">Enquiry Form</div>
@@ -1286,10 +1520,61 @@
               <strong>Instagram</strong>
               <a href="https://instagram.com/shrunga_ladies_pg" target="_blank" rel="noopener noreferrer">@shrunga_ladies_pg</a>
             </div>
+            <div class="contact-mini">
+  <strong>Google Business Profile</strong>
+  <a href="PASTE_YOUR_GOOGLE_BUSINESS_PROFILE_LINK_HERE"
+     target="_blank"
+     rel="noopener noreferrer">
+     View on Google
+  </a>
+</div>
           </div>
         </div>
       </div>
     </section>
+    <section class="section" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">Google Reviews</div>
+        <h2 class="section-title">What residents say</h2>
+        <p class="section-subtitle">
+          These cards are styled as a review section. Replace the button link with your live Google Business Profile review URL.
+        </p>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>Very clean rooms and friendly staff. Food is good and the place feels safe for working women.</p>
+        <div class="name">Ananya R.</div>
+        <div class="meta">Google Review</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>Location is excellent and the rooms are maintained well. Hot water and Wi-Fi worked properly.</p>
+        <div class="name">Pooja S.</div>
+        <div class="meta">Google Review</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>Good accommodation with security and homely food. The booking process was simple too.</p>
+        <div class="name">Megha T.</div>
+        <div class="meta">Google Review</div>
+      </div>
+    </div>
+
+    <div class="review-actions">
+      <a class="btn btn-primary" href="PASTE_YOUR_GOOGLE_BUSINESS_PROFILE_LINK_HERE" target="_blank" rel="noopener noreferrer">
+        Read on Google
+      </a>
+      <a class="btn btn-secondary" href="#contact">Book a Visit</a>
+    </div>
+  </div>
+</section>
 
     <section class="section">
       <div class="container grid-2">
@@ -1308,8 +1593,8 @@
           <div class="kicker">Find Us Here</div>
           <h2 class="section-title">Google Map integration</h2>
           <div class="map" style="margin-top:16px;">
-            <iframe
-              src="https://www.google.com/maps?q=Rajajinagar,Bangalore&output=embed"
+           <iframe
+  src="https://www.google.com/maps?q=739%2F3%2C%2059th%20Cross%2C%203rd%20Main%20Road%2C%204th%20Road%2C%20Rajajinagar%2C%20Bangalore%20560010&output=embed"
               loading="lazy"
               title="Shrunga Ladies PG location"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -1377,7 +1662,46 @@
 </section>
       </main>
   
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">FAQ</div>
+        <h2 class="section-title">Frequently asked questions</h2>
+        <p class="section-subtitle">
+          This helps with SEO and also answers the most common booking questions clearly.
+        </p>
+      </div>
+    </div>
 
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What room sharing options are available?</summary>
+        <div class="answer">We have multiple sharing options including 4, 5, 6, 8, and 10 sharing rooms depending on the floor and availability.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is food included in the rent?</summary>
+        <div class="answer">Yes, hygienic home-style food is provided. You can mention your food preference during enquiry.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is there hot water and Wi-Fi?</summary>
+        <div class="answer">Yes, the property includes hot water support and Wi-Fi for residents.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I book a room?</summary>
+        <div class="answer">Use the Check Availability button or the Book Now buttons, then send the enquiry on WhatsApp.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is the PG safe for women?</summary>
+        <div class="answer">Yes, the PG is designed for women with CCTV, lockers, and a secure environment.</div>
+      </details>
+    </div>
+  </div>
+</section>
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -1391,10 +1715,17 @@
           <p>#739/3, 59th Cross,<br>Rajajinagar, Bangalore</p>
           <p>6366819390<br>8152856571</p>
         </div>
-        <div>
-          <h4>Quick Links</h4>
-          <p><a href="#about">About</a><br><a href="#rooms">Rooms</a><br><a href="#facilities">Amenities</a><br><a href="#contact">Contact</a></p>
-        </div>
+     <div>
+  <h4>Quick Links</h4>
+  <p>
+    <a href="#about">About</a><br>
+    <a href="#rooms">Rooms</a><br>
+    <a href="#facilities">Amenities</a><br>
+    <a href="#reviews">Reviews</a><br>
+    <a href="#faq">FAQ</a><br>
+    <a href="#contact">Contact</a>
+  </p>
+</div>
         <div>
           <h4>Hours</h4>
           <p>Open 24/7<br>Feel free to contact us anytime.</p>
@@ -1407,9 +1738,12 @@
     </div>
   </footer>
 
-  <a class="float whatsapp" href="https://wa.me/918152856571" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">💬</a>
-  <a class="float call" href="tel:6366819390" aria-label="Call now">📞</a>
+ <a class="float-check" href="#contact">
+  Check Availability
+</a>
 
+<a class="float whatsapp" href="https://wa.me/918152856571">💬</a>
+<a class="float call" href="tel:6366819390">📞</a>
   <script>
     const yearEl = document.getElementById('year');
     yearEl.textContent = new Date().getFullYear();
@@ -1431,13 +1765,26 @@
     });
 
     // Demo submit behavior (replace with backend / WhatsApp / email as needed)
-    document.getElementById('enquiryForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const room = document.getElementById('roomType').value.trim();
-      alert(`Thank you ${name || ''}! We received your enquiry for ${room || 'a room'} and will contact you at ${phone || 'the provided number'}.`);
-    });
+  document.getElementById('enquiryForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const movein = document.getElementById('movein').value.trim();
+  const room = document.getElementById('roomType').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  const text =
+    `Hello, I am interested in Shrunga Ladies PG.%0A` +
+    `Name: ${encodeURIComponent(name || 'Not provided')}%0A` +
+    `Phone: ${encodeURIComponent(phone || 'Not provided')}%0A` +
+    `Move-in Date: ${encodeURIComponent(movein || 'Not provided')}%0A` +
+    `Preferred Room: ${encodeURIComponent(room || 'Not provided')}%0A` +
+    `Message: ${encodeURIComponent(message || 'Not provided')}`;
+
+  const waLink = `https://wa.me/918152856571?text=${text}`;
+  window.open(waLink, '_blank', 'noopener,noreferrer');
+});
 
     // Reveal animation
     const observer = new IntersectionObserver((entries) => {
