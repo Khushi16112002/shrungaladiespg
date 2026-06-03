@@ -641,6 +641,29 @@
       gap: 18px;
       grid-auto-flow: dense;
     }
+    .gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+}
+
+.gallery .tile{
+  overflow:hidden;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.gallery .tile img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  display:block;
+  transition:.4s;
+}
+
+.gallery .tile:hover img{
+  transform:scale(1.05);
+}
     .gallery .tile.wide { grid-column: span 2; }
     .gallery .tile.three { grid-column: span 1; }
 
@@ -1144,17 +1167,63 @@
           </div>
         </div>
 
-        <div class="gallery reveal">
-          <div class="tile main">
-            <div class="caption"><strong>Front view / hero image</strong><span>Use the best property photo here.</span></div>
-          </div>
-          <div class="tile two">
-            <div class="caption"><strong>Room interiors</strong><span>Show the neat and spacious rooms.</span></div>
-          </div>
-          <div class="tile three">
-            <div class="caption"><strong>Amenities / lifestyle</strong><span>Food, washroom, terrace, or common area.</span></div>
-          </div>
-        </div>
+        <section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="kicker">Gallery</span>
+        <h2 class="section-title">Explore Shrunga Ladies PG</h2>
+        <p class="section-subtitle">
+          Comfortable rooms, hygienic facilities, safe environment and modern amenities.
+        </p>
+      </div>
+    </div>
+
+    <div class="gallery">
+
+      <div class="tile">
+        <img src="Shrunga Ladies PG Building.jpg" alt="Shrunga Ladies PG Building">
+      </div>
+
+      <div class="tile">
+        <img src="Shrunga Ladies PG Entrance.jpg" alt="Shrunga Ladies PG Entrance">
+      </div>
+
+      <div class="tile">
+        <img src="Reception & Common Area.jpg" alt="Reception & Common Area">
+      </div>
+
+      <div class="tile">
+        <img src="Fully Furnished Ladies PG Room.jpg" alt="Fully Furnished Ladies PG Room">
+      </div>
+
+      <div class="tile">
+        <img src="Spacious Sharing Room.jpg" alt="Spacious Sharing Room">
+      </div>
+
+      <div class="tile">
+        <img src="Comfortable Shared Accommodation.jpg" alt="Comfortable Shared Accommodation">
+      </div>
+
+      <div class="tile">
+        <img src="Room with Entertainment Facility.jpg" alt="Room with Entertainment Facility">
+      </div>
+
+      <div class="tile">
+        <img src="Personal Storage Facilities.jpg" alt="Personal Storage Facilities">
+      </div>
+
+      <div class="tile">
+        <img src="Safe & Clean PG Corridor.jpg" alt="Safe & Clean PG Corridor">
+      </div>
+
+      <div class="tile">
+        <img src="Wash Area & Dressing Space.jpg" alt="Wash Area & Dressing Space">
+      </div>
+
+    </div>
+  </div>
+</section>
       </div>
     </section>
   </main>
